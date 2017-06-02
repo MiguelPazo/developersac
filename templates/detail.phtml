@@ -8,39 +8,43 @@
 <body>
 <div class="container">
     <div class="row">
-        <div class="col-sm-12">
-            <h2>Employees</h2>
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Position</th>
-                    <th>Salary</th>
-                    <th>Options</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php $count = 1; ?>
-                <?php foreach ($lstEmployees as $key => $employee): ?>
-                    <tr>
-                        <th scope="row"><?php echo $count ?></th>
-                        <td><?php echo $employee->name ?></td>
-                        <td><?php echo $employee->email ?></td>
-                        <td><?php echo $employee->position ?></td>
-                        <td><?php echo $employee->salary ?></td>
-                        <td>
-                            <a href="" class="btn btn-primary">
-                                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <?php $count++; ?>
-                <?php endforeach; ?>
-                </tbody>
-            </table>
-        </div>
+        <?php if ($employee): ?>
+            <div class="col-sm-12">
+                <h4>Employee details</h4>
+            </div>
+            <div class="col-sm-12">
+                <div class="col-sm-2 text-right">Name:</div>
+                <div class="col-sm-10 text-left"><?php echo $employee->name ?></div>
+            </div>
+            <div class="col-sm-12">
+                <div class="col-sm-2 text-right">Email:</div>
+                <div class="col-sm-10 text-left"><?php echo $employee->email ?></div>
+            </div>
+            <div class="col-sm-12">
+                <div class="col-sm-2 text-right">Phone:</div>
+                <div class="col-sm-10 text-left"><?php echo $employee->phone ?></div>
+            </div>
+            <div class="col-sm-12">
+                <div class="col-sm-2 text-right">Address:</div>
+                <div class="col-sm-10 text-left"><?php echo $employee->address ?></div>
+            </div>
+            <div class="col-sm-12">
+                <div class="col-sm-2 text-right">Position:</div>
+                <div class="col-sm-10 text-left"><?php echo $employee->position ?></div>
+            </div>
+            <div class="col-sm-12">
+                <div class="col-sm-2 text-right">Salary:</div>
+                <div class="col-sm-10 text-left"><?php echo $employee->salary ?></div>
+            </div>
+            <div class="col-sm-12">
+                <div class="col-sm-2 text-right">Skills:</div>
+                <div class="col-sm-10 text-left"><?php echo $skills ?></div>
+            </div>
+        <?php else: ?>
+            <div class="col-sm-12">
+                <h4>Employee doesn't exist</h4>
+            </div>
+        <?php endif; ?>
     </div>
 </div>
 </body>

@@ -1,0 +1,21 @@
+<employees>
+    <?php foreach ($lstEmployees as $key => $employee): ?>
+        <employee>
+            <id><?php echo $employee->id ?></id>
+            <isOnline><?php echo $employee->isOnline ?></isOnline>
+            <salary><?php echo $employee->salary ?></salary>
+            <age><?php echo $employee->age ?></age>
+            <position><?php echo $employee->position ?></position>
+            <name><?php echo $employee->name ?></name>
+            <gender><?php echo $employee->gender ?></gender>
+            <email><?php echo $employee->email ?></email>
+            <phone><?php echo $employee->phone ?></phone>
+            <address><?php echo $employee->address ?></address>
+            <skills>
+                <?php foreach ($employee->skills as $key => $skill): ?>
+                    <skill><?php echo $skill->skill ?></skill>
+                <?php endforeach; ?>
+            </skills>
+        </employee>
+    <?php endforeach; ?>
+</employees>
